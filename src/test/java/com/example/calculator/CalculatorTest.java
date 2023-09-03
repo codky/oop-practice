@@ -20,7 +20,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
  */
 public class CalculatorTest {
 
-    // 1 + 2 ----> Calculator
+    // 1 + 2 ----> Calculator (Calculator 에게 작업을 위임)
     //   3   <----
     @DisplayName("덧셈 연산을 수행한다.")
     @Test
