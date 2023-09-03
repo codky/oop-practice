@@ -26,7 +26,7 @@ public class CalculatorTest {
     @Test
     void additionTest() {
 
-        int result = Calculator.calculate(1, "+", 2);
+        int result = Calculator.calculate(new PositiveNumber(1), "+", new PositiveNumber(2));
 
         assertThat(result).isEqualTo(3);
     }
@@ -35,7 +35,7 @@ public class CalculatorTest {
     @Test
     void subtractionTest() {
 
-        int result = Calculator.calculate(1, "-", 2);
+        int result = Calculator.calculate(new PositiveNumber(1), "-", new PositiveNumber(2));
 
         assertThat(result).isEqualTo(-1);
     }
@@ -43,7 +43,7 @@ public class CalculatorTest {
     @DisplayName("연산을 수행한다.")
     @ParameterizedTest
     @MethodSource("formulaAndResult")
-    void parameterizedTestAnnotationWithTest(int operand1, String operator, int operand2, int result) {
+    void parameterizedTestAnnotationWithTest(PositiveNumber operand1, String operator, PositiveNumber operand2, int result) {
 
         int calculateResult = Calculator.calculate(operand1, operator, operand2);
 
@@ -52,10 +52,10 @@ public class CalculatorTest {
 
     private static Stream<Arguments> formulaAndResult() {
         return Stream.of(
-                arguments(1, "+", 2, 3),
-                arguments(1, "-", 2, -1),
-                arguments(1, "*", 2, 2),
-                arguments(4, "/", 2, 2)
+                arguments(new PositiveNumber(1), "+", new PositiveNumber(2), 3),
+                arguments(new PositiveNumber(1), "-", new PositiveNumber(2), -1),
+                arguments(new PositiveNumber(1), "*", new PositiveNumber(2), 2),
+                arguments(new PositiveNumber(4), "/", new PositiveNumber(2), 2)
         );
     }
 }
