@@ -1,4 +1,4 @@
-package com.example;
+package com.example.gradeCalculator;
 
 public class Course {
 

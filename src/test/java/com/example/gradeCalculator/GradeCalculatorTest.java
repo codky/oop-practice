@@ -1,4 +1,4 @@
-package com.example;
+package com.example.gradeCalculator;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
